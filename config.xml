@@ -22,7 +22,7 @@
   <gap:splash src="/icons/ios/Default-Portrait~ipad.png" width="768" height="1024" gap:platform="ios" />
   <author email="zcw607@gmail.com">zcw607@gmail.com</author>
   <access origin="*" />
-  <preference name="phonegap-version" value="3.0.0" />
+  <preference name="phonegap-version" value="3.3.0" />
   <gap:plugin name="org.apache.cordova.battery-status" />
   <gap:plugin name="org.apache.cordova.camera" />
   <gap:plugin name="org.apache.cordova.media-capture" />
