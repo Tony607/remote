@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <CompiledOutputPath>distrib\</CompiledOutputPath>
+    <OutputPath>bin\$(Configuration)</OutputPath>
+    <CordovaVersion>3.0</CordovaVersion>
+    <BuildCloudVersion>2.0</BuildCloudVersion>
+    <Name>remote</Name>
+    <RootNamespace>remote</RootNamespace>
+    <ProjectGuid>{5fb714e3-7e9c-4f75-9e88-d32ac3d26ad2}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="config.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="index.html" />
+    <Content Include="cordova.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="images\choosephoto.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\jquery-1.6.4.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="scripts\jquery.mobile-1.2.0.min.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="style\jquery.mobile-1.2.0.min.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\android\icon-hdpi.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\android\icon-ldpi.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\android\icon-mdpi.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\android\icon-xhdpi.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\android\splash-hdpi.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\android\splash-ldpi.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\android\splash-mdpi.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\android\splash-xhdpi.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\ios\Default%402x~iphone.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\ios\Default-568h%402x~iphone.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\ios\Default-Landscape~ipad.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\ios\Default-Portrait~ipad.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\ios\Default~iphone.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\ios\icon%402x.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\ios\icon-72%402x.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\ios\icon-72.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="icons\ios\icon.png">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="icons\" />
+    <Folder Include="icons\android\" />
+    <Folder Include="icons\ios\" />
+    <Folder Include="images" />
+    <Folder Include="style" />
+    <Folder Include="scripts" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Target Name="ResolveReferences" />
+  <Target Name="CoreCompile" />
+  <Target Name="CreateManifestResourceNames" />
+  <Target Name="CopyFilesToOutputDirectory">
+    <ItemGroup>
+      <AbsoluteContentDestinations Include="$(OutputPath)%(Content.Identity)" />
+    </ItemGroup>
+    <Copy SourceFiles="@(Content)" DestinationFiles="@(AbsoluteContentDestinations)" />
+  </Target>
+</Project>
